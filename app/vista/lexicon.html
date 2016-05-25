@@ -10,6 +10,9 @@
 	<script src="../app/vista/js/jquery.min.js"></script>
 	<script src="../app/vista/js/bootstrap.min.js"></script>
 	<script src="../app/vista/wow/dist/wow.min.js"></script>
+	<!--script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script-->
+	<script src="../app/vista/js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="../app/vista/js/jquery-ui-1.11.4.custom/jquery-ui.min.css" />
 	<script>
 		wow = new WOW({
 			mobile: true
@@ -27,7 +30,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-3 panel-preguntas">
-				<input type="text">
+				<input type="text" id="buscador">
 			</div>
 			<div class="col-md-9 panel-interactivo table-responsive">
 				<div class="row text-center" style="padding-top:5em;">
@@ -43,5 +46,26 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#buscador").autocomplete({
+				source: function (request, response) {
+					$.getJSON('http://localhost/david/app/modelo/createJson.php', {info: request.term}, function(json) {
+						response(json);
+					});
+					/*$.ajax({
+						url: 'http://localhost/david/app/modelo/createJson.php',
+						type: 'GET',
+						dataType: 'json',
+						data: {info: request.term},
+						success: function(json){
+							response(json);
+						}
+					});*/
+					
+				}
+			});
+		});
+	</script>
 </body>
 </html>
