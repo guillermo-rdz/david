@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Interprete Tsotsil-Español</title>
+
+	<link rel="stylesheet" href="../app/vista/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="../app/vista/css/style.css" />
+	<script src="../app/vista/js/jquery.min.js"></script>
+	<script src="../app/vista/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../app/vista/wow/css/libs/animate.css">
+	<script src="../app/vista/wow/dist/wow.min.js"></script>
+	<script>
+		wow = new WOW({
+			mobile: true
+		});
+		wow.init()	
+	</script>
+</head>
+<body>
+	<nav class="nav-menu container-fluid">
+		<div class="row text-center title" style="padding: 2em;">
+			<div class="col-md-6 wow slideInLeft" data-wow-delay=".25s" data="titulo-nav">Pediatria</div>
+			<div class="col-md-6 wow bounceInRight" data-wow-delay=".5s"><a href="/bolanos" class="btn-inicio">Inicio</a></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3 btn-menu">
+				<a href="pp"><div data="menu-nav">preguntas protocolarias</div></a>
+				<div class="row line"></div>
+			</div>
+			<div class="col-md-2 btn-menu">
+				<a href="au"><div data="menu-nav">auscultación</div></a>
+				<div class="row line"></div>
+			</div>
+			<div class="col-md-2 btn-menu">
+				<a href="pc"><div data="menu-nav">partes del cuerpo</div></a>
+				<div class="row line"></div>
+			</div>
+			<div class="col-md-3 btn-menu">
+				<a href="pcomplejas"><div data="menu-nav">preguntas complejas</div></a>
+				<div class="row line"></div>
+			</div>
+			<div class="col-md-2 btn-menu">
+				<a href="../lexicon/buscar"><div data="menu-nav">lexicon</div></a>
+				<div class="row line"></div>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 panel-preguntas">
+				<div id="pediatria">
+					#CONTENIDO#
+				</div>
+			</div>
+			<div class="col-md-9 panel-interactivo table-responsive">
+				<div class="row text-center" style="padding-top:5em;">
+					<div class="col-md-6">
+						<figure><img src="../app/vista/imagenes/123.jpg" alt=""></figure>
+					</div>
+					<div class="col-md-6">
+						<div style="font-size: 2.5em; display:flex; aling-content:center;">HOLA BIENVENIDOS!!!</div>
+						<div style="font-size: 2em;">Li oyot</div>
+					</div>
+				</div>
+				<div class="cover"></div>
+			</div>
+		</div>
+	</div>
+	<script src="../app/vista/js/pediatria.js"></script>
+</body>
+</html>

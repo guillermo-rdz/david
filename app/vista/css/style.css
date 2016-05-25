@@ -1,0 +1,141 @@
+*{
+	font-family: 'Bistream Vera Sans Mono';
+	font-style: normal;
+	font-weight: bold;
+	line-height: 26.4px;
+}
+.nav-menu{
+	background-color: #fca503;
+	color: white;
+}
+.container-fluid .cover{
+	background-color: #0071bc;
+	opacity: 0.1;
+}
+.cover{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+.title{
+	border-bottom: 0px white solid;
+}
+.nav-menu div[data="titulo-nav"]{
+	font-size: 3.5em;
+	padding-left: 0em;
+	text-align: left;
+}
+.nav-menu div[data="menu-nav"]{
+	color: yellow;
+	text-align: center;
+	padding: 12px 5px 5px 5px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+.line{
+	border-bottom: 5px transparent solid;
+	margin-bottom: 2px;
+	transition: 1s;
+}
+.col-md-6 .btn-inicio{
+	text-decoration: none;
+	color: brown;
+	font-size: 1.5em;
+	padding-left: 50%;
+	transition: 0.5s;
+}
+.col-md-6 .btn-inicio:hover{
+	transition: 0.5s;
+	font-size: 2em;
+}
+.btn-menu{
+	background-color: brown;
+	cursor: pointer;
+	border-left: 1px white solid;
+}
+.btn-menu a{
+	text-decoration: none;
+	color: black;
+}
+.btn-menu:hover .line{
+	transition: 1s;
+	border-bottom: 5px white solid;
+}
+
+.panel-preguntas{
+	background-color: #fcf0d7;
+	height: 490px;
+}
+.panel-interactivo{
+	height :490px;
+}
+.listaElementos li{
+	color: brown;
+	list-style-type: none;
+	cursor: pointer;
+	font-size: 1.3em;
+	margin: 15px 0px;
+	padding: 0% 20% 0% 0%
+}
+.elementList:hover{
+	border-bottom: 2px black solid;
+}
+.elementList:before{
+	content: "¿";
+}
+.elementList:after{
+	content: "?";
+}
+.pp1{
+	font-size: 4.5em;
+	padding-top: 20%;
+	text-align: center;
+}
+.pp2{
+	margin-top: 2%;
+	font-size: 2em;
+}
+.pp3{
+	margin: 1.5em 0;
+}
+aside{
+	display: inline-block;
+}
+.row kbd{
+	text-transform: uppercase;
+}
+.figure{
+	margin: 1.5em 5px;
+	height: 100px;
+	width: 100px;
+}
+.figure2{
+	height: 200px;
+	width: 150px;
+	margin: 2.3em;
+}
+.figure3{
+	height: 180px;
+	width: 180px;
+	margin: 3em 9em;
+}
+.figure7{
+	height: 100px;
+	width: 100px;
+	margin: 3em 3em;
+}
+.element{
+	padding: 1.2em;
+	
+}
+.element .row .col-md-4{
+	cursor: pointer;
+}
+.element:nth-child(2n+1){
+	background: #CDCCCA;
+}
+.element:nth-child(2n+0){
+ 	background: #F5E6F9; 		
+}

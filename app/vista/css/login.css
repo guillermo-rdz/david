@@ -1,0 +1,32 @@
+.padding{
+	
+}
+.subtitulo{
+	color: #7f8794;
+}
+.trauma{
+	padding-right: 4em;
+}
+.pediatria{
+	padding-right: 25%;
+	padding-top: 3em;
+}
+.btn-login{
+	margin-top: 20%;
+	padding: 1em 1.5em;
+}
+.btn-login:hover{
+	background-color: #fc9628;
+	color: white;
+}
+.modal-header{
+	background-color: #fc9628;
+	padding: 3em;
+	color: white;
+}
+.input-group{
+	margin:  2em 0em;
+}
+.error{
+	color: red;
+}

@@ -1,0 +1,27 @@
+<div class="pp8">
+	<div class="row text-center pp2"><kbd>Ta lajesbil</kbd></div>
+	<div class="respuestasi" style="text-align:center">
+		<img src="../app/vista/imagenes/fuma_y_toma/fuma.jpg" style="width: 150px; heigth:150px">
+	</div>
+	<div class="sino">
+		<img src="../app/vista/imagenes/sino/si.jpg" alt="" class="figure3" id="respuesta_si_fuma" style="cursor: pointer;">
+		<img src="../app/vista/imagenes/sino/no.jpg" alt="" class="figure3" style="cursor: pointer;">
+	</div>
+	<div class="container_si_fuma">
+		<div class="row text-center pp2" style="font-size:2.5em;">
+			<kbd>¿Cuantos fuma al dia? - ¿jayim cha tok' k'ak'al?</kbd>
+		</div>
+		<div class="row pp2 text-center">
+			<div class="col-md-3">1 - 5 veces</div>
+			<div class="col-md-3"> 6 o más</div>
+			<div class="col-md-3">1 cajetilla</div>
+		</div>
+	</div>
+</div>
+<script>
+$(".container_si_fuma").hide();
+	$("#respuesta_si_fuma").on("click", function (e) {
+		e.preventDefault();
+		$(".container_si_fuma").slideDown();
+	})
+</script>

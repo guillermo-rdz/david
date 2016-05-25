@@ -1,0 +1,94 @@
+<div class="row text-center pp2">mija'toj op cha ta</div>
+<div class="pp9 text-center">
+	<aside>
+		<div class="row text-center">
+			<img class="figure2" style="cursor:pointer;" src="../app/vista/imagenes/parte_cuerpo/codo.jpg" alt="">
+		</div>
+		<div><kbd>dolor de brazo</kbd></div>
+	</aside>
+	<aside>
+		<div class="row text-center">
+			<img class="figure2"  style="cursor:pointer;"src="../app/vista/imagenes/parte_cuerpo/cuello.jpg" alt="">
+		</div>
+		<div><kbd>dolor de cuello</kbd></div>
+	</aside>
+	<aside>
+		<div class="row text-center">
+			<img class="figure2"  style="cursor:pointer;" src="../app/vista/imagenes/parte_cuerpo/espalda_alta.jpg" alt="">
+		</div>
+		<div><kbd>dolor de espalda</kbd></div>
+	</aside>
+	<aside>
+		<div class="row text-center">
+			<img class="figure2" style="cursor:pointer;" src="../app/vista/imagenes/parte_cuerpo/ezpalda_baja.jpg" alt="">
+		</div>
+		<div><kbd>dolor en la lumbar</kbd></div>
+	</aside>
+	<aside>
+		<div class="row text-center">
+			<img class="figure2" style="cursor:pointer;" src="../app/vista/imagenes/parte_cuerpo/manoo.jpg" alt="">
+		</div>
+		<div><kbd>dolor de mano</kbd></div>
+	</aside>
+	<aside>
+		<div class="row text-center">
+			<img class="figure2" style="cursor:pointer;" src="../app/vista/imagenes/parte_cuerpo/muneca.jpg" alt="">
+		</div>
+		<div><kbd>dolor en la muñeca</kbd></div>
+	</aside>
+	<aside>
+		<div class="row text-center">
+			<img class="figure2" style="cursor:pointer;" src="../app/vista/imagenes/parte_cuerpo/rodilla.jpg" alt="">
+		</div>
+		<div><kbd>dolor en la rodilla</kbd></div>
+	</aside>
+	<aside>
+		<div class="row text-center">
+			<img class="figure2" style="cursor:pointer;" src="../app/vista/imagenes/parte_cuerpo/tobillo.jpg" alt="">
+		</div>
+		<div><kbd>dolor en el talon</kbd></div>
+	</aside>
+	<aside>
+		<div class="row text-center">
+			<img class="figure2" style="cursor:pointer;" src="../app/vista/imagenes/parte_cuerpo/pie.jpg" alt="">
+		</div>
+		<div><kbd>dolor en la planta del pie</kbd></div>
+	</aside>
+</div>
+
+<div class="pp4 text-center respuesta1 pp2 element">
+	<div class="row">¿Como se leciono?</div>
+	<div class="row">k´ uxi la lajesaba´ </div>
+	<div class="row">
+		<div class="col-md-4" style="cursor:pointer">caida</div>
+		<div class="col-md-4"style="cursor:pointer">corriendo</div>
+		<div class="col-md-4"style="cursor:pointer">golpe</div>
+	</div>
+</div>	
+
+<div class="pp4 text-center respuesta2 pp2 element">
+	<div class="row">¿puede moverlo?</div>
+	<div class="row">k´ uxi la lajesaba´ </div>
+	<div class="row">
+		<div class="col-md-6" style="cursor:pointer">SI</div>
+		<div class="col-md-6" style="cursor:pointer">NO</div>
+	</div>
+</div>	
+
+<script>
+
+	$(".respuesta1").hide();
+	$(".respuesta2").hide();
+
+	$(".row .figure2").on("click", function(){
+		$(".respuesta1").slideDown();
+	});
+
+ 	$(".respuesta1 .row .col-md-4").on("click", function(){
+		$(".respuesta2").slideDown();
+	});
+
+	
+	
+</script>
+

@@ -1,0 +1,118 @@
+.titulo-navegacion{
+	background: #fc9628; /*es el fondo del bloque que estoy usando*/
+	text-align: center; /*centrado del texto*/
+	padding: 1.8em 0; /*es el espacio 1em=16px */
+}
+.titulo-navegacion div{
+	font-size: 3em;
+	font-weight: bold;
+	color: white;
+}
+.titulo{
+	color: #7f8794;
+	margin: 1%;
+}
+.logos{
+	padding: 2em 0;
+}
+.logo1 figure img{
+	width: 100px;
+	height: auto;
+}
+.logo2 figure img{
+	padding-top: 5%;
+	width: 200px;
+	height: auto;
+}
+.middle{
+	top: 50px;
+	position: relative;
+}
+img[alt="2.jpg"]{
+	position: absolute;
+	top: -35%;
+	width: 15%; 
+	height: auto;
+	right: 30px;
+}
+.right{
+	position: relative;
+	top: 20px;
+	padding-left: 50%;
+}
+.btningresar{
+	background: #fc9628;
+	position: relative;
+	border-radius: 5px;
+	line-height: 1.5;
+	padding: 6px 12px;
+	border: 1 px solid transparent;
+	border-color: #fc9628;
+	color: black;
+	font-size: 2em;
+	margin-top: 50px;
+	transition: .5s;
+	-webkit-transition: .5s;
+}
+.btningresar:hover{
+	background: black;
+	border-color: black;
+	color: #fc9628;
+}
+
+@media screen and (min-width: 360px){
+	.titulo-navegacion{
+		font-size: 1em;
+	}
+	.titulo{
+		font-size: 1em;
+	}
+}
+
+.area{
+	text-align: left;
+	padding: 1.0em 0;
+	color: #7f8794;
+	font-size: 1.0em;
+}
+.pedia{
+	text-align: center;
+	padding: 1.3em 0;
+	color: #7f8794;
+	font-size: 1.5em;
+	
+}
+.trauma{
+	text-align: right;
+	padding: 1.3em 0;
+	color: #7f8794;
+	font-size: 1.5em;
+	}
+
+.btningre{
+
+	background: #fc9628;
+	border-radius: 5px;
+	line-height: 1.5;
+	padding: 6px 12px;
+	border: 1 px solid transparent;
+	border-color: #fc9628;
+	color: black;
+	font-size: 1em;
+	margin-right: 35%;
+	
+}
+.btningre:hover{
+	background: black;
+	border-color: black;
+	color: #fc9628;
+}
+.img4{
+	text-align: right;
+	display: top-flex;
+	padding-bottom: 1em;
+}
+.figuretrauma{
+	text-align: left;
+}
+

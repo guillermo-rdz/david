@@ -1,0 +1,47 @@
+<div class="pp4 text-center">
+	<div class="row  pp2">¿Es la primera vez que viene a consulta?</div>
+	<div class="row pp2">ja’yim velta cha’vat ta</div>
+	<img src="../app/vista/imagenes/sino/si.jpg" alt="" data-pregunta="si" class="figure3">
+	<img src="../app/vista/imagenes/sino/no.jpg" alt="" data-pregunta="no" style="cursor:pointer;" class="figure3">
+	<div class="respuesta2 pp2 element">
+		<div class="row">¿Cuantas veces ha venido a consulta?</div>
+		<div class="row">jaykot telemot ta consulta</div>
+		<div class="row">
+			<div class="col-md-4">1 - 2 veces</div>
+			<div class="col-md-4">3 - 4</div>
+			<div class="col-md-4">4 o más</div>
+		</div>
+	</div>
+	<div class="respuesta3 pp2 element">
+		<div class="row">¿Cuando fue ultima vez que vino a consulta?</div>
+		<div class="row">k´usik k´slajen ta consulta</div>
+		<div class="row">
+			<div class="col-md-4">1 semana</div>
+			<div class="col-md-4">2 semanas</div>
+			<div class="col-md-4">1 mes</div>
+		</div>
+	</div>
+	
+	
+</div>
+<script>
+	$(".respuesta2").hide();
+	$(".respuesta3").hide();
+	$(".respuesta4").hide();
+	$("[data-mostrar]").hide();
+
+	$("[data-pregunta='no'").on("click", function(){
+		$(".respuesta2").slideDown();
+	});
+
+	$(".respuesta2 .row .col-md-4").on("click", function(){
+		$(".respuesta3").slideDown();
+	});
+
+	$(".respuesta3 .row .col-md-4").on("click", function(){
+		$(".respuesta4").slideDown();
+	});
+	$("[data-receta='si'").on("click", function(){
+		$("[data-mostrar]").slideDown();
+	});
+</script>

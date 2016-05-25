@@ -1,0 +1,80 @@
+<div class="pp4 text-center">
+	<div class="row  pp2">¿Esta usted bajo algún tratamiento medico?</div>
+	<div class="row pp2">Mi oy k’usil poxil cha vich’</div>
+	<img src="../app/vista/imagenes/sino/si.jpg" data-pregunta="si" style="cursor:pointer;" class="figure3">
+	<img src="../app/vista/imagenes/sino/no.jpg" data-pregunta="no" class="figure3">
+	
+	<div class="respuesta2 pp2 element">
+		<div class="row">¿Que medicamento es?</div>
+		<div class="row">K’usil poxilal</div>
+		<div class="row">
+			<div class="col-md-12" style="cursor:pointer;" data-siguiente="respuesta2">Siguente</div>
+		</div>
+	</div>
+
+	<div class="respuesta3 pp2 element">
+		<div class="row">¿trae alguna receta medica?</div>
+		<div class="row">Mi oy a vich’ojtal a receta medica</div>
+		<div class="row">
+			<div class="col-md-6" data-respuesta3="si" style="cursor:pointer;">SI</div>
+			<div class="col-md-6" style="cursor:pointer;">NO</div>
+		</div>
+    </div>
+
+	<div class="respuesta4 pp2 element">
+		<div class="row">¿me la puede dar?</div>
+		<div class="row">¿Xu xa bakbuntal?</div>
+		<div class="row">
+			<div class="col-md-4" style="cursor:pointer;" data-siguiente="respuesta4">Siguente</div>
+		</div>
+   </div>
+
+   <div class="respuesta5 pp2 element">
+		<div class="row"> a que horas lo tomo?</div>
+		<div class="row">¿Jayim ora la bik?</div>
+		<div class="row" data-siguiente="respuesta5">
+			<div class="col-md-4" style="cursor:pointer;">ayer</div>
+			<div class="col-md-4" style="cursor:pointer;">hace una hora</div>
+			<div class="col-md-4" style="cursor:pointer;">en la mañana</div>
+		</div>
+   </div>
+
+   <div class="respuesta6 pp2 element">
+		<div class="row">¿Cuántas veces lo tomo?</div>
+		<div class="row">¿Jaykoj la bik’?</div>
+		<div class="row">
+			<div class="col-md-4" style="cursor:pointer;">1-2 veces</div>
+			<div class="col-md-4" style="cursor:pointer;">2-3 veces</div>
+			<div class="col-md-4" style="cursor:pointer;">3-5 veces</div>
+		</div>
+   </div>			
+	
+	
+</div>
+<script>
+	$(".respuesta2").hide();
+	$(".respuesta3").hide();
+	$(".respuesta4").hide();
+	$(".respuesta5").hide();
+	$(".respuesta6").hide();
+
+	$("[data-pregunta='si']").on("click", function(){
+		$(".respuesta2").slideDown();
+	});
+
+	$('[data-siguiente="respuesta2"]').on("click", function (){
+		$(".respuesta3").slideDown();
+	});
+
+	$("[data-respuesta3='si']").on("click",function (){
+		$(".respuesta4").slideDown();
+	});
+
+	$("[data-siguiente='respuesta4']").on("click",function (){
+		$(".respuesta5").slideDown();
+	});
+
+	$("[data-siguiente='respuesta5'] .col-md-4").on("click", function (){
+		$(".respuesta6").slideDown();
+	});
+</script>

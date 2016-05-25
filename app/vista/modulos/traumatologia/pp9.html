@@ -1,0 +1,27 @@
+<div class="pp8">
+	<div class="row text-center pp2"><img src="" alt=""><kbd>Ich’om ik’</kbd></div>
+	<div class="respuestasi" style="text-align:center">
+		<img src="../app/vista/imagenes/fuma_y_toma/tomar.jpg" style="width: 150px; heigth:150px">
+	</div>
+	<div>
+		<img src="../app/vista/imagenes/sino/si.jpg" id="respuesta_si_toma" alt="" class="figure3" style="cursor: pointer;">
+		<img src="../app/vista/imagenes/sino/no.jpg" alt="" class="figure3">
+	</div>
+	<div class="container_si_toma">
+		<div class="row text-center pp2" style="font-size:2.5em;">
+			<kbd>¿Cuantos toma al dia? - ¿jayim cha buch' k'ak'al?</kbd>
+		</div>
+		<div class="row pp2">
+			<div class="col-md-3">1 - 3 cervezas</div>
+			<div class="col-md-3">4 - 10 cervezas</div>
+			<div class="col-md-3">11 o más cervezas</div>
+		</div>
+	</div>
+</div>
+<script>
+$(".container_si_toma").hide();
+	$("#respuesta_si_toma").on("click", function (e) {
+		e.preventDefault();
+		$(".container_si_toma").slideDown();
+	})
+</script>

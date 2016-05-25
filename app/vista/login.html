@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="ViewPort" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="app/vista/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app/vista/css/prueba.css">
+	<link rel="stylesheet" type="text/css" href="app/vista/css/login.css">
+	<link rel="stylesheet" href="app/vista/wow/css/libs/animate.css">
+	<link rel="stylesheet" href="app/vista/font-awesome-4.4.0/css/font-awesome.min.css">
+	<script src="app/vista/wow/dist/wow.min.js"></script>
+	<script>
+		wow = new WOW({
+			mobile: true
+		});
+		wow.init()
+	</script>
+</head>
+<body>
+	<nav class="titulo-navegacion">
+		<div class="wow fadeInDown" data-wow-delay=".70s">Hospital de las culturas, San Cristobal de las Casas, Chiapas
+		</div> 
+	</nav>
+	<div class="container-fluid">
+		<div class="row logos text-center">
+			<div class="col-md-5 logo1 wow bounceInLeft" data-wow-delay=".55s">
+				<figure><img src="app/vista/imagenes/escudo.jpg" alt="escudo de chiapas"></figure>
+			</div>
+			<div class="col-md-2">
+				<button class="btn btn-default btn-login" data-toggle="modal" data-target="#btn-login" >
+					Login
+				</button>
+			</div>
+			<div class="col-md-5 logo2 wow bounceInRight" data-wow-delay=".55">
+				<figure><img src="app/vista/imagenes/ssa.jpg" alt="secretaria de salud"></figure>
+			</div>
+		</div>
+		<div class="row padding">
+			<div class="col-md-6 col-lg-6 text-center trauma">
+				<div class="row subtitulo"><h2>Traumalogía</h2></div>
+				<div class="row wow bounceInUp" data-wow-delay=".59s" >
+					<figure>
+						<img src="app/vista/imagenes/trauma.jpg" alt="trauma.jpg">
+					</figure>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-6 text-center pediatria">
+				<div class="row subtitulo"><h2>Pediatría</h2></div>
+				<div class="row wow bounceInDown" data-wow-delay=".59s">
+					<figure>
+						<img src="app/vista/imagenes/pediatria.jpg" alt="pediatria.jpg">
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal -->
+	<div id="btn-login" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      	<div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	<h4 class="modal-title text-center contact-info-heading">
+	        		<i class="fa fa-lock"></i> Logueate doctorcito
+	        	</h4>
+	      	</div>
+	      	<form action="">
+		      	<div class="modal-body">
+			      	<div class="form-group">
+			      		<div class="row text-center error">
+			      			<h4>Ingrese usuario y contraseña</h4>
+			      		</div>
+			      		<div class="input-group">
+			      			<span class="input-group-addon"><i class="fa fa-user"></i></span>
+			      			<input type="text" class="form-control" name="user" placeholder="Usuario" autofocus>
+			      		</div>
+			      		<div class="input-group">
+			      			<span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+			      			<input type="password" class="form-control" name="pass" placeholder="Contraseña" >
+			      		</div>
+			      	</div>
+		      	</div>
+		      	<div class="modal-footer">
+		      		<input type="submit" id="btn-submit" value="Ingresar" class="btn btn-success">
+		      		<input type="reset" value="Limpiar campos" class="btn btn-danger">
+			        <button type="button" class="btn btn-default btn-modal" data-dismiss="modal">Cerrar</button>
+		      	</div>
+	      	</form>
+	    </div>
+	  </div>
+	</div>
+
+
+	<script src="app/vista/js/jquery.min.js"></script>
+	<script src="app/vista/js/bootstrap.min.js"></script>
+	<script src="app/vista/js/login.js"></script>
+</body>
+</html>
