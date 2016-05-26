@@ -3,7 +3,7 @@
 
 	$busca = utf8_decode($_GET['info']);
 
-	$query = $mysqli->query("SELECT * FROM frase WHERE frase_esp = '$busca'");
+	$query = $mysqli->query("SELECT * FROM frase WHERE frase_esp LIKE '%$busca%'");
 
 		$arreglo = array();
 		while ($row = $query->fetch_assoc()) {
