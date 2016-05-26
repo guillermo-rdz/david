@@ -8,4 +8,5 @@
 	if ($mysqli->connect_errno) {
 		echo "Error";
 	}
+	$mysqli->set_charset("utf-8");
 ?>
