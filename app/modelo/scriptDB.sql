@@ -6,29 +6,37 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 CREATE SCHEMA IF NOT EXISTS `frases` DEFAULT CHARACTER SET utf8 ;
 USE `frases` ;
 
-CREATE TABLE IF NOT EXISTS `frases`.`users` (
-  `idusers` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user` VARCHAR(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `frases`.`areas` (
+  `idarea` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `area` VARCHAR(45) NOT NULL,
   `type` TINYINT(2) NULL,
-  PRIMARY KEY (`idusers`))
+  PRIMARY KEY (`idarea`))
 ENGINE = InnoDB;
 
-create table username(
-  idusername TINYINT(3) unsigned NOT null AUTO_INCREMENT,
+/*
+*/
+insert into areas values(DEFAULT, 'pediatria', 2);
+insert into areas values(DEFAULT, 'trauma', 2);
+insert into areas values(DEFAULT, 'admin', 1);
+
+create table users(
+  iduser TINYINT(3) unsigned NOT null AUTO_INCREMENT,
   nombre varchar(20) not null,
   password varchar(10) not null,
-  fkidusers int unsigned not null,
-  constraint pkusername primary key(idusername),
-  constraint fkusername foreign key(fkidusers) references users(idusers)
+  fkiduser int unsigned not null,
+  constraint pkusername primary key(iduser),
+  constraint fkusername foreign key(fkiduser) references areas(idarea)
   on delete no action
   on update no action
 );
 
-insert into username values (default,"doctrauma","trauma",2),
+insert into users values (default,"doctrauma","trauma",2),
   (default,"docpedia","pedia",1),
   (default,"docadmin","adminqaz",3);
-
-create view usuarios as select idusername,nombre,password,user,type from users,username where idusers=fkidusers;
+/*
+*/
+# Consulta producto cruz Login
+# select iduser,nombre,password,area,type from users,username where idusers=fkidusers;
 
 
 CREATE TABLE IF NOT EXISTS `frases`.`frase` (
@@ -45,17 +53,13 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
-insert into users values(DEFAULT, 'pediatria', 2);
-insert into users values(DEFAULT, 'trauma', 2);
-insert into users values(DEFAULT, 'admin', 1);
-
 insert into frase values (DEFAULT, 'Fractura en el brazo', 'guss a com', 1);
 insert into frase values (DEFAULT, 'Fractura en el pie', 'lajem a foct', 1);
 insert into frase values (DEFAULT, 'Fractura en la muñeca', 'lajem a bacom', 1);
 insert into frase values (DEFAULT, 'Fractura en el tobillo', 'lajem a com', 1);
 insert into frase values (DEFAULT, 'Posible infeccion', 'chabal a chamell', 1);
 insert into frase values (DEFAULT, 'Cáncer de hueso', 'cáncer ta a baquel', 1);
-insert into frase values (DEFAULT, 'No trote o corra si tiene dolor de espalda', 'cuss a pa');
+insert into frase values (DEFAULT, 'No trote o corra si tiene dolor de espalda', 'cuss a pa',1);
 insert into frase values (DEFAULT, 'No trote o corra si tiene dolor de rodilla', 'muxa aline me cux hoc', 1);
 insert into frase values (DEFAULT, 'Desgarro muscular', 'cua a baquel', 1);
 insert into frase values (DEFAULT, 'Necesita reposo', 'chaquam a reposo', 1);
@@ -65,7 +69,7 @@ insert into frase values (DEFAULT, 'luxaciones en los  ligamentos', 'a puxíl', 
 insert into frase values (DEFAULT, 'roturas fibrilare', 'milo coc',1);
 insert into frase values (DEFAULT, 'requiere una cirujia', 'paso operación', 1);
 insert into frase values (DEFAULT, 'Hay que vendarlo', 'chantic', 1);
-insert into frase values (DEFAULT, 'Le pondremos yeso' 'cachetic yeso',1);
+insert into frase values (DEFAULT, 'Le pondremos yeso', 'cachetic yeso',1);
 insert into frase values (DEFAULT, 'le haremos unas radiografías', 'pastic junuc radiografia',1);
 insert into frase values (DEFAULT, 'necesita intervencion quirúrgica','muxa me paso operacion', 1);
 insert into frase values (DEFAULT, 'necesita reposo por un dia', 'ca can reposo sun cacal',1);
@@ -128,3 +132,6 @@ insert into frase values (DEFAULT, "Niña", "tseb", 2);
 insert into frase values (DEFAULT, "Niño", "keren", 2);
 insert into frase values (DEFAULT, "Por favor", "avokaluk", 2);
 insert into frase values (DEFAULT, "Gracias", "kolaval", 2);
+
+/*
+*/
