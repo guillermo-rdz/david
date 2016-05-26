@@ -1,3 +1,4 @@
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
@@ -11,6 +12,24 @@ CREATE TABLE IF NOT EXISTS `frases`.`users` (
   `type` TINYINT(2) NULL,
   PRIMARY KEY (`idusers`))
 ENGINE = InnoDB;
+
+create table username(
+  idusername TINYINT(3) unsigned NOT null AUTO_INCREMENT,
+  nombre varchar(20) not null,
+  password varchar(10) not null,
+  fkidusers int unsigned not null,
+  constraint pkusername primary key(idusername),
+  constraint fkusername foreign key(fkidusers) references users(idusers)
+  on delete no action
+  on update no action
+);
+
+insert into username values (default,"doctrauma","trauma",2),
+  (default,"docpedia","pedia",1),
+  (default,"docadmin","adminqaz",3);
+
+create view usuarios as select idusername,nombre,password,user,type from users,username where idusers=fkidusers;
+
 
 CREATE TABLE IF NOT EXISTS `frases`.`frase` (
   `idfrase` INT UNSIGNED NOT NULL AUTO_INCREMENT,
