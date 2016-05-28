@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	class controller{
 		public function login(){
 			include("app/vista/login.html");
@@ -14,61 +15,95 @@
 
 		// Traumatologia
 		public function traumapp(){
-			$pagina = $this->load_page("app/vista/trauma.html");
-			$html = $this->load_page("app/vista/modulos/traumatologia/listapp.html");
-			$pagina = $this->replace("/\#LISTA\#/",$html,$pagina);
-			$this->view_page($pagina);
+			if(isset($_SESSION['conectado']) && $_SESSION['area']=="trauma"){
+				$pagina = $this->load_page("app/vista/trauma.html");
+				$html = $this->load_page("app/vista/modulos/traumatologia/listapp.html");
+				$pagina = $this->replace("/\#LISTA\#/",$html,$pagina);
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
 		}
 		public function traumaau(){
-			$pagina = $this->load_page("app/vista/trauma.html");
-			$html = $this->load_page("app/vista/modulos/traumatologia/listaau.html");
-			$pagina = $this->replace("/\#LISTA\#/",$html,$pagina);
-			$this->view_page($pagina);
+			if($_SESSION['conectado'] && $_SESSION['area']=="trauma"){
+				$pagina = $this->load_page("app/vista/trauma.html");
+				$html = $this->load_page("app/vista/modulos/traumatologia/listaau.html");
+				$pagina = $this->replace("/\#LISTA\#/",$html,$pagina);
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
 		}
 		public function traumapc(){
-			$pagina = $this->load_page("app/vista/trauma.html");
-			$html = $this->load_page("app/vista/modulos/traumatologia/listapc.html");
-			$pagina = $this->replace("/\#LISTA\#/",$html,$pagina);
-			$this->view_page($pagina);
+			if($_SESSION['conectado'] && $_SESSION['area']=="trauma"){
+				$pagina = $this->load_page("app/vista/trauma.html");
+				$html = $this->load_page("app/vista/modulos/traumatologia/listapc.html");
+				$pagina = $this->replace("/\#LISTA\#/",$html,$pagina);
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
 		}
 		public function traumapcomplejas(){
-			$pagina = $this->load_page("app/vista/trauma.html");
-			$html = $this->load_page("app/vista/modulos/traumatologia/listapcomplejas.html");
-			$pagina = $this->replace("/\#LISTA\#/",$html,$pagina);
-			$this->view_page($pagina);
+			if($_SESSION['conectado'] && $_SESSION['area']=="trauma"){
+				$pagina = $this->load_page("app/vista/trauma.html");
+				$html = $this->load_page("app/vista/modulos/traumatologia/listapcomplejas.html");
+				$pagina = $this->replace("/\#LISTA\#/",$html,$pagina);
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
 		}
 
 		
 		// Pediatria
 		public function pediatriapp(){
-			$pagina = $this->load_page("app/vista/pediatria.html");
-			$html = $this->load_page("app/vista/modulos/pediatria/listapp.html");
-			$pagina = $this->replace("/\#CONTENIDO\#/",$html,$pagina);
-			$this->view_page($pagina);
+			if($_SESSION['conectado'] && $_SESSION['area']=="pediatria"){				
+				$pagina = $this->load_page("app/vista/pediatria.html");
+				$html = $this->load_page("app/vista/modulos/pediatria/listapp.html");
+				$pagina = $this->replace("/\#CONTENIDO\#/",$html,$pagina);
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
 		}
 		public function pediatriaau(){
-			$pagina = $this->load_page("app/vista/pediatria.html");
-			$html = $this->load_page("app/vista/modulos/pediatria/listaau.html");
-			$pagina = $this->replace("/\#CONTENIDO\#/",$html,$pagina);
-			$this->view_page($pagina);
+			if($_SESSION['conectado'] && $_SESSION['area']=="pediatria"){
+				$pagina = $this->load_page("app/vista/pediatria.html");
+				$html = $this->load_page("app/vista/modulos/pediatria/listaau.html");
+				$pagina = $this->replace("/\#CONTENIDO\#/",$html,$pagina);
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
 		}
 		public function pediatriapc(){
-			$pagina = $this->load_page("app/vista/pediatria.html");
-			$html = $this->load_page("app/vista/modulos/pediatria/listapc.html");
-			$pagina = $this->replace("/\#CONTENIDO\#/",$html,$pagina);
-			$this->view_page($pagina);
+			if($_SESSION['conectado'] && $_SESSION['area']=="pediatria"){
+				$pagina = $this->load_page("app/vista/pediatria.html");
+				$html = $this->load_page("app/vista/modulos/pediatria/listapc.html");
+				$pagina = $this->replace("/\#CONTENIDO\#/",$html,$pagina);
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
 		}
 		public function pediatriapcomplejas(){
-			$pagina = $this->load_page("app/vista/pediatria.html");
-			$html = $this->load_page("app/vista/modulos/pediatria/listapcomplejas.html");
-			$pagina = $this->replace("/\#CONTENIDO\#/",$html,$pagina);
-			$this->view_page($pagina);
+			if($_SESSION['conectado'] && $_SESSION['area']=="pediatria"){
+				$pagina = $this->load_page("app/vista/pediatria.html");
+				$html = $this->load_page("app/vista/modulos/pediatria/listapcomplejas.html");
+				$pagina = $this->replace("/\#CONTENIDO\#/",$html,$pagina);
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
 		}
 
 		//LEXICON
 		public function lexicon(){
-			$pagina = $this->load_page("app/vista/lexicon.html");
-			$this->view_page($pagina);
+			if($_SESSION['conectado']){
+				$pagina = $this->load_page("app/vista/lexicon.html");
+				$this->view_page($pagina);
+			} else
+				header("location: /david");
+		}
+
+		public function logout(){
+			session_unset();
+			session_destroy();
+
+			header('location: /david');
 		}
 
 

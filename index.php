@@ -27,6 +27,10 @@
 		else if ($_GET['action'] == 'traumatologia' && $_GET['subaction'] == 'pcomplejas') {
 			$mvc->traumapcomplejas();
 		}
+		else if ($_GET['action'] == 'traumatologia' && $_GET['subaction'] == 'logout') {
+			$mvc->logout();
+		}
+
 	}
 	else if ($_GET['action'] == 'pediatria') {
 		if ($_GET['action'] == 'pediatria' && $_GET['subaction'] == 'pp') {
@@ -40,6 +44,9 @@
 		}
 		else if ($_GET['action'] == 'pediatria' && $_GET['subaction'] == 'pcomplejas') {
 			$mvc->pediatriapcomplejas();
+		}
+		else if ($_GET['action'] == 'pediatria' && $_GET['subaction'] == 'logout') {
+			$mvc->logout();
 		}
 	}
  ?>
