@@ -14,6 +14,8 @@
 			$.each(arreglo,function (i,index){
 				if(index.value.length==0){
 					$(index).css({"border-color":"red","box-shadow": "0px 0px 10px 0.5px red"});
+				} else {
+					$(index).css({"border-color": "#66afe9", "box-shadow": "0px 0px 10px 0.5px #66afe9"});
 				}
 			});
 		} else {
@@ -32,7 +34,7 @@
 			data: {"usuario":usuario,"password":password},
 			dataType: "json"
 		}).done(function (data){
-			//console.log(data.json);
+			//console.log(data);
 			if (data.validate == "false"){
 				$(".modal-content").addClass("shake-vertical shake-constant");
 				setTimeout(function (){
@@ -49,9 +51,11 @@
 					//setTimeout(function (){window.location = "panel";},1500);
 				} else if(data.json.type==2){
 					if(data.json.area=="trauma"){
-						setTimeout(function (){window.location = "traumatologia/pp";},1500);
+						$(".modal-body").html("<h1 class='text-center'>"+data.mensaje+"</h1>");
+						setTimeout(function (){window.location = "traumatologia/pp";},1000);
 					} else {
-						setTimeout(function (){window.location = "pediatria/pp";},1500);
+						$(".modal-body").html("<h1 class='text-center'>"+data.mensaje+"</h1>");
+						setTimeout(function (){window.location = "pediatria/pp";},1000);
 					}
 				}
 			}

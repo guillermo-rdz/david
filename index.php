@@ -14,6 +14,10 @@
 	if ($_GET['action'] == 'lexicon' && $_GET['subaction'] == 'buscar') {
 		$mvc->lexicon();
 	}
+	if ($_GET['action'] == 'lexicon' && $_GET['subaction'] == 'logout') {
+		$mvc->logout();
+	}
+
 	else if ($_GET['action'] == 'traumatologia') {
 		if ($_GET['action'] == 'traumatologia' && $_GET['subaction'] == 'pp') {
 			$mvc->traumapp();
