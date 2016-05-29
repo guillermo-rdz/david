@@ -24,7 +24,7 @@
 	<nav class="nav-menu container-fluid">
 		<div class="row text-center title" style="padding: 2em;">
 			<div class="col-md-6 wow slideInLeft" data-wow-delay=".25s" data="titulo-nav">Lexicón</div>
-			<div class="col-md-6 wow bounceInRight" data-wow-delay=".5s"><a href="/bolanos" class="btn-inicio">Inicio</a></div>
+			<div class="col-md-6 wow bounceInRight" data-wow-delay=".5s"><a href="../" class="btn-inicio">Inicio</a></div>
 		</div>
 	</nav>
 	<div class="container-fluid">
@@ -65,32 +65,37 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$("#buscador").autocomplete({
-				source: function (request, response) {
-					$.getJSON('http://localhost/david/app/modelo/createJson.php', {info: request.term}, function(json) {
-						response(json);
-					});
-					
-				}
-			});
 
-			function fillTable (argument) {
-				$.getJSON('http://localhost/david/app/modelo/createTable.php', {info: textInput}, function(json) {
-						console.log(json);
-						$.each(json, function(i, index) {
-						 $("#tbody").append("<tr><td>" + index.t1 + "</td>"+
-						 						"<td>" + index.t2 + "</td>" +
-						 "</tr>");
-					});
+			$.getJSON('../app/modelo/session.php', function(json) {
+				//console.log(json.rango);
+				$("#buscador").autocomplete({
+					source: function (request, response) {
+						$.getJSON('../app/modelo/createJson.php', {info: request.term, rango: json.rango}, function(json) {
+							response(json);
+						});
+						
+					}
 				});
-			}
 
-			$("#form_buscar").submit(function(event) {
-				event.preventDefault();
-				$("#tbody").empty();
-				textInput = $("#buscador").val();
-				fillTable(textInput);
+				function fillTable (argument) {
+					$.getJSON('../app/modelo/createTable.php', {info: textInput, rango: json.rango}, function(json) {
+							console.log(json);
+							$.each(json, function(i, index) {
+							 $("#tbody").append("<tr><td>" + index.t1 + "</td>"+
+							 						"<td>" + index.t2 + "</td>" +
+							 "</tr>");
+						});
+					});
+				}
+
+				$("#form_buscar").submit(function(event) {
+					event.preventDefault();
+					$("#tbody").empty();
+					textInput = $("#buscador").val();
+					fillTable(textInput);
+				});
 			});
+			
 
 		});
 	</script>

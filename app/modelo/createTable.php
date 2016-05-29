@@ -2,8 +2,10 @@
 	include ('conexion.php');
 
 	$busca = utf8_decode($_GET['info']);
+	$busca = $mysqli->real_escape_string($busca);
+	$type = $_GET['rango'];
 
-	$query = $mysqli->query("SELECT * FROM frase WHERE frase_esp LIKE '%$busca%'");
+	$query = $mysqli->query("SELECT * FROM frase WHERE frase_esp LIKE '%$busca%' AND type = '$type'");
 
 		$arreglo = array();
 		while ($row = $query->fetch_assoc()) {

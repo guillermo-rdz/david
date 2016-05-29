@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `frases`.`frase` (
   `frase_tso` VARCHAR(45) NULL,
   `type` TINYINT(2) NULL,
   PRIMARY KEY (`idfrase`))
-ENGINE = InnoDB
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
