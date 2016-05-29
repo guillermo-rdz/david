@@ -17,7 +17,7 @@
 		$_SESSION["conectado"] = true;
 		$_SESSION["rango"] = $row['type'];
 		$_SESSION['area'] = $row['area'];
-		$salida = array('mensaje' =>"Bienvenido: al Area de: ".$row['area'],'json'=>$datos,"validate"=>"true");
+		$salida = array('mensaje' =>"Bienvenido al Area de: ".$row['area'],'json'=>$datos,"validate"=>"true");
 		$salida = json_encode($salida);
 		echo $salida;
 	} else {
