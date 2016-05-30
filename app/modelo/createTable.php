@@ -4,6 +4,9 @@
 	$busca = utf8_decode($_GET['info']);
 	$busca = $mysqli->real_escape_string($busca);
 	$type = $_GET['rango'];
+	if (empty($busca)) {
+		$busca = 'zzzzzz0000';
+	}
 
 	$query = $mysqli->query("SELECT * FROM frase WHERE frase_esp LIKE '%$busca%' AND type = '$type'");
 
